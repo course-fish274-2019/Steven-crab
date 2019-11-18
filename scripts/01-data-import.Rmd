@@ -1,0 +1,28 @@
+---
+title: "01-data-import"
+output: html_document
+---
+
+
+```{r, echo=FALSE}
+library(tidyverse)
+```
+
+
+
+Here we will try to combine blastout, count data, and DEG list....
+
+
+```{r}
+DEG <- read.delim("https://raw.githubusercontent.com/sr320/nb-2019/master/C_bairdi/analyses/Crab_DEGlist.txt", sep = "\t", header = FALSE)
+
+knitr::kable(head(DEG))
+```
+
+```{r}
+blastout <- read.delim("https://raw.githubusercontent.com/sr320/nb-2019/master/C_bairdi/analyses/Cb_v1_blastx_sp_imac.tab", header = FALSE)
+```
+
+```{r}
+cts <- read.delim("https://raw.githubusercontent.com/sr320/nb-2019/master/C_bairdi/analyses/Abundance-merge.txt", sep = "\t")
+```
